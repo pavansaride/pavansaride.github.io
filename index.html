@@ -1,12 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pavan Hanuman</title>
+  <title>Rama Koti 1 Crore</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background-color: #fff8e1;
+    }
+
+    .rama-text {
+      color: #ff6f00;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    #box {
+      height: 400px;
+      width: 400px;
+      margin: 20px auto;
+      overflow-y: scroll;
+      border: 2px solid orange;
+      background-color: #fff3e0;
+      padding: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: orange;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    h1 {
+      color: #d32f2f;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Google image (example) -->
-  <img src="https://www.hdwallpapers.in/thumbs/2021/hanuman_ram_lakshman_hd_hanuman-t2.jpg" alt="god Image" width="400">
+  <h1>🙏 Rama Koti (1 Crore) 🙏</h1>
+  <h2 id="count">Count: 0</h2>
+
+  <button onclick="startRama()">Start Auto Increment</button>
+
+  <div id="box"></div>
+
+  <script>
+    const total = 10000000; // 1 crore
+    let count = 0;
+    const box = document.getElementById("box");
+    const counter = document.getElementById("count");
+
+    function startRama() {
+      const batchSize = 1000; // Add 1000 at a time to prevent crash
+
+      function addBatch() {
+        for (let i = 0; i < batchSize && count < total; i++) {
+          count++; // ✅ increment operator
+          const div = document.createElement("div");
+          div.className = "rama-text";
+          div.innerText = "Sri Rama";
+          box.appendChild(div);
+        }
+
+        counter.innerText = "Count: " + count.toLocaleString();
+
+        if (count < total) {
+          setTimeout(addBatch, 10); // Add next batch after 10ms
+        } else {
+          alert("🎉 Rama Koti Completed!");
+        }
+      }
+
+      addBatch();
+    }
+  </script>
 
 </body>
 </html>
+✅ How It Works
+Uses count++ to increment the number of Sri Rama.
+Adds them in batches of 1000 to avoid browser crash.
+Updates live count.
+Scrollable container so you can see the output.
+Stops automatically at 1 crore.
+
+💡 Tip: You can change batchSize or setTimeout interval to make it faster or slower depending on your computer/browser.
+
+If you want, I can make an even smoother version that:
+
+Runs all 1 crore automatically without freezing
+Shows live progress percentage
+Saves progress even if page refreshes
+
+Do you want me to do that next?
